@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', v.index),
     path('about/', v.about),
+    path('store/', v.store, name='store'),
 
 ]
