@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Salman Md Sultan</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{% static 'assets/img/profile.jpg' %}" alt="..." /></span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{all_data.0.image.url}}" alt="..." /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -41,14 +41,14 @@
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <h1 class="mb-0">
-                        Salman 
+                        {{all_data.0.name}} 
                         <span class="text-primary">Md Sultan</span>
                     </h1>
                     <div class="subheading mb-5">
-                        3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-                        <a href="mailto:name@email.com">name@email.com</a>
+                        {{all_data.0.phone}}
+                        <!-- <a href="mailto:name@email.com">name@email.com</a> -->
                     </div>
-                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                    <p class="lead mb-5">{{all_data.0.desc}}</p>
                     <div class="social-icons">
                         <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>

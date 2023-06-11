@@ -330,7 +330,7 @@
                   <p class="card-description">
                     About Information
                   </p>
-                  <form class="forms-sample" method="POST" action="{% url 'store' %}">
+                  <form class="forms-sample" method="POST" action="{% url 'store' %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
                       <label for="exampleInputName1">Name</label>
@@ -349,8 +349,72 @@
                       <label for="exampleTextarea1">Description</label>
                       <textarea class="form-control" id="exampleTextarea1" rows="4" name="desc"></textarea>
                     </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Image</label>
+                      <input type="file" class="form-control" id="exampleInputName1" placeholder="Phone Number" name="image">
+                  </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                   </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Table with About Information</h4>
+                  <!-- <p class="card-description">
+                    Add class <code>.table-{color}</code>
+                  </p> -->
+                  <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>
+                            #
+                          </th>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Date of Birth
+                          </th>
+                          <th>
+                            Phone Number
+                          </th>
+                          <th>
+                            Description
+                          </th>
+                          <th>
+                            Action
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for x in all_data %}
+                        <tr class="table-info">
+                          <td>
+                            {{ forloop.counter }}
+                          </td>
+                          <td>
+                            {{x.name}}
+                          </td>
+                          <td>
+                            {{x.dob}}
+                          </td>
+                          <td>
+                            {{x.phone}}
+                          </td>
+                          <td>
+                            {{x.desc}}
+                          </td>
+                          <td>
+                            Edit | Delete
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>

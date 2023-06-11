@@ -6,6 +6,7 @@ class About(models.Model):
     dob = models.CharField(max_length=500)
     phone = models.CharField(max_length=20)
     desc = models.CharField(max_length=500,db_column='description')
+    image = models.ImageField(null=True, blank=True, upload_to ="images/")
 
 
 class Educations(models.Model):
